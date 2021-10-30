@@ -14,11 +14,8 @@ When you are done the application should have all of the same functionality, but
 
 ## Fork the repository
 
-The first step is to fork the source repository in GitHub and then clone your forked repository to your local development system.
+The first step is to fork the source repository in GitHub and then clone your forked repository to your local development system. There are instructions for forking a repository in GitHub here: https://docs.github.com/en/get-started/quickstart/fork-a-repo
 
-```
-add instructions...
-```
 
 Once you have it cloned locally make sure that the application runs by running the following commands if you are using `yarn`:
 
@@ -41,30 +38,30 @@ If you want to attempt this on your own without a step by step walkthrough first
 
 ## Step by Step
 <details>
-    <summary>Expand to see step by step actions to convert to function components with hooks.</summary>
+    <summary>Click the arrow to expand this section and see step by step instructions to convert to function components with hooks.</summary>
 
 ### Convert `GuessControl`
 
-- [ ] Open `src\GuessControl.js`
-- [ ] Rename the current `GuessControl` class to `GuessControlOld` if you want to keep it a reference while converting the code
-- [ ] Create a new function component called `GuessControl`
-- [ ] Copy the return value from the render function in the class component to be the return value in the new function component. Remove any references to `this.` since those will be replaced with new references.
-- [ ] Create `currentGuess` and `setCurrentGuess` state variables using the `useState` hook and initialize the value to an empty string. Set the `value` property for the input element to refer to this state value. (Make sure you include `useState` as an import). 
-- [ ] Create a `handleInputChange` function within the component that updates the `currentGuess` state value when the user change the value in the input. Set the `onChange` property for the input element to refer to this function
+- [ ] Open the `GuessControl.js` file.
+- [ ] Rename the current `GuessControl` class to `GuessControlOld` if you want to keep it a reference while converting the code.
+- [ ] Create a new function component called `GuessControl` that will take an `onGuess` prop. 
+- [ ] Copy the return value from the render function in the class component to be the return value in the new function component. Remove any references to `this.` since those will be replaced with new references to local variables or props passed in to the function component.
+- [ ] Create a new state variable named `currentGuess` with setter `setCurrentGuess` and default value of an empty string. Set the `value` property for the input element to refer to this state value. (Make sure to import `useState`)
+- [ ] Create a `handleInputChange` function within the component that updates the `currentGuess` state value when the user changes the value in the input. Set the `onChange` property for the input element to refer to this function.
 - [ ] Create a `onSubmitGuess` function that calls the `onGuess` prop with the `currentGuess` value converted to a number and also resets the `currentGuess` to an empty string when it is called. Set the `onClick` property on the button to refer to this function.
-- [ ] If you still have the old class version around as `GuessControlOld` delete it
+- [ ] If you still have the old class version around as `GuessControlOld`, delete it.
 
 ### Convert `NumberGuessingGame`
 
-- [ ] Open `src\NumberGuessingGame.js`
-- [ ] Rename the current `NumberGuessingGame` class to `NumberGuessingGameOld` if you want to keep it a reference while converting the code
-- [ ] Create a new function component called `NumberGuessingGame`
+- [ ] Open the `NumberGuessingGame.js` file.
+- [ ] Rename the current `NumberGuessingGame` class to `NumberGuessingGameOld` if you want to keep it a reference while converting the code.
+- [ ] Create a new function component called `NumberGuessingGame`.
 - [ ] Copy the logic and return value from the render function in the class component to be in the new function component. Remove any references to `this.` since those will be replaced with new references.
-- [ ] Create 3 state variables and their setters for `numberToGuess`, `numberOfGuesses`, and `latestGuess` and initialize them to the same values from the class component version. (Make sure you include `useState` as an import).
-- Create a `handleGuess` function that will be passed in to the `GuessControl` component as the `onGuess` prop. This function should take the guess as an argument and set the `latestGuess` state with the guess and increment the `numberOfGuesses` state. 
+- [ ] Create 3 state variables and their setters for `numberToGuess`, `numberOfGuesses`, and `latestGuess` and initialize them to the same values from the class component version. (Make sure to import `useState`)
+- Create a `handleGuess` function that will be passed in to the `GuessControl` component as the `onGuess` prop. This function should take the guess as an argument and set the `latestGuess` state with the guess (converted to a number using the Number function) and increment the `numberOfGuesses` state. 
 - [ ] Create a `handleReset` function within the component that resets all 3 of the state properties the same way the handleReset function from the class component reset them. Pass this function to the `GameOver` component as the `onReset` prop.
-- [ ] Update all references from the class component that referred to `this.<something>` to refer to the correct variable or function for the new function component
-- [ ] If you still have the old class version around as `NumberGuessingGameOld` delete it
+- [ ] Update all references from the class component that referred to `this.<something>` to refer to the correct variable or function for the new function component.
+- [ ] If you still have the old class version around as `NumberGuessingGameOld`, delete it.
 
 
 </details>

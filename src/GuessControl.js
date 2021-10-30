@@ -24,6 +24,8 @@ class GuessControl extends Component {
   onSubmitGuess() {
     // Since the values from an HTML input are strings by default,
     //  convert to a number for the returned guess value
+    //  by passing in the string to the Number function.
+    // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
     this.props.onGuess(Number(this.state.currentGuess));
     this.setState({ currentGuess: "" });
   }
