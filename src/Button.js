@@ -4,10 +4,12 @@ const buttonStyle = {
   minHeight: "2em",
 };
 
-export default function Button({ onClick, children }) {
+const Button = ({ onClick, onGuess ,children }) => {
   return (
     <button style={buttonStyle} onClick={onClick}>
       {children}
     </button>
   );
 }
+
+export default Button
