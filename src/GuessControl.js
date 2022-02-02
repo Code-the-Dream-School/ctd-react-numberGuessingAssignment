@@ -1,7 +1,40 @@
-import React, { Component } from "react";
+import React, { useState} from "react";
 import Button from "./Button";
 
-class GuessControl extends Component {
+
+export default function GuessControl({onGuess}) {
+  const [currentGuess,setCurrentGuess] = useState("");
+
+  const handleInputChange = (event) =>{
+    setCurrentGuess(event.target.value)
+  }
+
+  const onSubmitGuess =() =>{
+    console.log(currentGuess);
+    onGuess(Number(currentGuess));
+    // onGuess is a function that does handleGuess
+    setCurrentGuess("");
+  }
+
+  return (
+    <>
+    <div>
+        <input
+          type="number"
+          value={currentGuess} //??
+          onChange={handleInputChange}
+        />
+        <Button onClick={onSubmitGuess}>Submit Guess</Button>
+      </div>
+    </>
+  );
+}
+
+
+
+
+// ------------------------Class Component--------------------------
+/*class GuessControlOld extends Component {
   constructor(props) {
     super(props);
 
@@ -13,6 +46,7 @@ class GuessControl extends Component {
      * These lines are required to make the methods/functions declared on this
      *  class have the correct `this` object when they run.
      */
+    /*
     this.handleInputChange = this.handleInputChange.bind(this);
     this.onSubmitGuess = this.onSubmitGuess.bind(this);
   }
@@ -44,4 +78,4 @@ class GuessControl extends Component {
   }
 }
 
-export default GuessControl;
+export default GuessControlOld;*/
