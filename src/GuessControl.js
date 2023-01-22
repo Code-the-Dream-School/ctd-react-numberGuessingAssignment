@@ -4,9 +4,11 @@ import Button from "./Button";
 const GuessControl = ({ onGuess }) => {
     const [currentGuess, setCurrentGuess] = useState("");
 
-  const handleInputChange = (event) => {
-    setCurrentGuess(event.target.value);
-  };
+    const handleInputChange = (event) => {
+      event.preventDefault();
+      const onChange = event.target.value;
+      setCurrentGuess(onChange);
+    }
 
   const onSubmitGuess = () => {
     onGuess(Number(currentGuess));
