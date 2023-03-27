@@ -63,3 +63,6 @@ function NumberGuessingGame(){
      */
 
 export default NumberGuessingGame;
+
+
+// ejemplo para saber mi status 
