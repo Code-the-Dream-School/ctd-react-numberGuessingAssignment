@@ -16,6 +16,7 @@ const NumberGuessingGame = () => {
   const [latestGuess, setLatestGuess] = useState(null)
 
   const handleGuess = (guess) => {
+    console.log('2',guess)
     setLatestGuess(Number(guess))
     setNumberOfGuesses(numberOfGuesses + 1)
   }
