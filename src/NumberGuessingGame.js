@@ -43,4 +43,5 @@ function NumberGuessingGame() {
     </div>
   )
 }
+
 export default NumberGuessingGame

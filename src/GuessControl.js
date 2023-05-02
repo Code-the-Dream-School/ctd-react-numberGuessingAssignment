@@ -20,5 +20,4 @@ function GuessControl({ onGuess }) {
     </div>
   )
 }
-
 export default GuessControl
