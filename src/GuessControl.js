@@ -10,6 +10,7 @@ const GuessControl = ({onGuess}) => {
 
   const onSubmitGuess = () => {
     onGuess(+currentGuess);
+    setCurrentGuess("");
   };
 
   return (
