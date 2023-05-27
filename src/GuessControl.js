@@ -1,7 +1,7 @@
 import React, {useState } from "react";
 import Button from "./Button";
 
-const GuessControl = ({onGuess}) => {
+const GuessControl = ({onGuess, disabled}) => {
   const [currentGuess, setCurrentGuess] = useState("");
 
   const handleInputChange = (event) => {
@@ -19,8 +19,11 @@ const GuessControl = ({onGuess}) => {
         type="number"
         value={currentGuess}
         onChange={handleInputChange}
+        disabled={disabled}
       />
-      <Button onClick={onSubmitGuess}>Submit Guess</Button>
+      <Button onClick={onSubmitGuess} disabled={disabled}>
+        Submit Guess
+      </Button>
     </div>
   );
 };

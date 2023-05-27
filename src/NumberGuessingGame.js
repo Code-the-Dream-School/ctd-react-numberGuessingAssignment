@@ -41,7 +41,7 @@ const NumberGuessingGame = () => {
       <h2>
         Can you guess the number I am thinking of in {MAX_ATTEMPTS} tries?
       </h2>
-      <GuessControl onGuess={handleGuess} />
+      <GuessControl onGuess={handleGuess} disabled={isGameOver}/>
       {
         isGameOver 
         && 
