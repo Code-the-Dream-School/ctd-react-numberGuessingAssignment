@@ -1,67 +1,70 @@
-```
-🏗️ Work in Progress...
-```
-This lesson will teach you:
-- Converting stateful class components to function components using hooks
+# Getting Started with Create React App
 
-The goal for this lesson is to get experience working with React Class components and how to get the same functionality from a class component and a functional component using hooks.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-The React application that you will be using is a simple number guessing game. The game is currently written using a mix of class components for components that have state and stateless functional components.
+## Available Scripts
 
-When you are done the application should have all of the same functionality, but the class components should be refactored to be function components that use the `useState` hook to manage their stateful data.
+In the project directory, you can run:
 
-# Instructions
+### `npm start`
 
-## Fork the repository
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The first step is to fork the source repository in GitHub and then clone your forked repository to your local development system. There are instructions for forking a repository in GitHub here: https://docs.github.com/en/get-started/quickstart/fork-a-repo
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
+### `npm test`
 
-Once you have it cloned locally make sure that the application runs by running the following commands if you are using `yarn`:
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-> If you are using `npm` just replace `yarn` with `npm` and run the same commands.
+### `npm run build`
 
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-```
-yarn install
-yarn start
-```
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-## Familiarize yourself with the code
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-In the current version of the application there is a mix of class components and stateless function components.
-Take some time to look over the structure of the application so that you understand how it is constructed.
+### `npm run eject`
 
-The class components in the current version are `NumberGuessingGame` and `GuessControl`. These are the components that you will be converting to be function components with hooks. The existing function components don't need any changes.
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you want to attempt this on your own without a step by step walkthrough first then leave the section below collapsed.
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-## Step by Step
-<details>
-    <summary>Click the arrow to expand this section and see step by step instructions to convert to function components with hooks.</summary>
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-### Convert `GuessControl`
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-- [ ] Open the `GuessControl.js` file.
-- [ ] Rename the current `GuessControl` class to `GuessControlOld` if you want to keep it a reference while converting the code.
-- [ ] Create a new function component called `GuessControl` that will take an `onGuess` prop. 
-- [ ] Copy the return value from the render function in the class component to be the return value in the new function component. Remove any references to `this.` since those will be replaced with new references to local variables or props passed in to the function component.
-- [ ] Create a new state variable named `currentGuess` with setter `setCurrentGuess` and default value of an empty string. Set the `value` property for the input element to refer to this state value. (Make sure to import `useState`)
-- [ ] Create a `handleInputChange` function within the component that updates the `currentGuess` state value when the user changes the value in the input. Set the `onChange` property for the input element to refer to this function.
-- [ ] Create a `onSubmitGuess` function that calls the `onGuess` prop with the `currentGuess` value converted to a number and also resets the `currentGuess` to an empty string when it is called. Set the `onClick` property on the button to refer to this function.
-- [ ] If you still have the old class version around as `GuessControlOld`, delete it.
+## Learn More
 
-### Convert `NumberGuessingGame`
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-- [ ] Open the `NumberGuessingGame.js` file.
-- [ ] Rename the current `NumberGuessingGame` class to `NumberGuessingGameOld` if you want to keep it a reference while converting the code.
-- [ ] Create a new function component called `NumberGuessingGame`.
-- [ ] Copy the logic and return value from the render function in the class component to be in the new function component. Remove any references to `this.` since those will be replaced with new references.
-- [ ] Create 3 state variables and their setters for `numberToGuess`, `numberOfGuesses`, and `latestGuess` and initialize them to the same values from the class component version. (Make sure to import `useState`)
-- Create a `handleGuess` function that will be passed in to the `GuessControl` component as the `onGuess` prop. This function should take the guess as an argument and set the `latestGuess` state with the guess (converted to a number using the Number function) and increment the `numberOfGuesses` state. 
-- [ ] Create a `handleReset` function within the component that resets all 3 of the state properties the same way the handleReset function from the class component reset them. Pass this function to the `GameOver` component as the `onReset` prop.
-- [ ] Update all references from the class component that referred to `this.<something>` to refer to the correct variable or function for the new function component.
-- [ ] If you still have the old class version around as `NumberGuessingGameOld`, delete it.
+To learn React, check out the [React documentation](https://reactjs.org/).
 
+### Code Splitting
 
-</details>
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
