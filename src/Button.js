@@ -4,9 +4,9 @@ const buttonStyle = {
     minHeight: "2em",
   };
   
-  export default function Button({ onClick, children }) {
+  export default function Button({ onClick, children, onKeyDown}) {
     return (
-      <button style={buttonStyle} onClick={onClick}>
+      <button style={buttonStyle} onClick={onClick} onKeyDown={onKeyDown}>
         {children}
       </button>
     );
