@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import Button from "./Button";
 
-class GuessControl extends Component {
+class GuessControlOld extends Component {
   constructor(props) {
     super(props);
 
@@ -43,5 +43,26 @@ class GuessControl extends Component {
     );
   }
 }
+
+const GuessControl = ({ onGuess }) => {
+  const [currentGuess, setCurrentGuess] = useState(0);
+
+  const handleInputChange = (event) => {
+    const updatedValue = event.target.value;
+    setCurrentGuess(updatedValue);
+  };
+
+  const onSubmitGuess = () => {
+    onGuess(Number(currentGuess));
+    setCurrentGuess("");
+  };
+
+  return (
+    <div>
+      <input type="number" value={currentGuess} onChange={handleInputChange} />
+      <Button onClick={onSubmitGuess}>Submit Guess</Button>
+    </div>
+  );
+};
 
 export default GuessControl;
