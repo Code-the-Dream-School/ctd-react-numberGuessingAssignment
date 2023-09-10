@@ -21,7 +21,7 @@ function NumberGuessingGame() {
 
 
   const handleGuess = (guess) => {
-    setLatestGuess(guess)
+    setLatestGuess(Number(guess))
     setNumberOfGuesses(numberOfGuesses + 1,)
   }
 
