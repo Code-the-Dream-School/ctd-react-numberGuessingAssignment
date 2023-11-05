@@ -4,10 +4,10 @@ const buttonStyle = {
     minHeight: "2em",
 };
 
-export default function Button({ onClick, children }) {
+export default function Button(props) {
     return (
-        <button style={buttonStyle} onClick={onClick}>
-            {children}
+        <button style={buttonStyle} {...props}>
+            {props.children}
         </button>
     );
 }

@@ -41,7 +41,7 @@ function NumberGuessingGame() {
                 Can you guess the number I am thinking of in {MAX_ATTEMPTS}{" "}
                 tries?
             </h2>
-            <GuessControl onGuess={handleGuess} />
+            <GuessControl onGuess={handleGuess} isGameOver={isGameOver} />
             {isGameOver && (
                 <GameOver hasWon={isCorrectGuess} onReset={handleReset} />
             )}
