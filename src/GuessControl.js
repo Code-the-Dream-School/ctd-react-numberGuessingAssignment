@@ -21,9 +21,7 @@ const GuessControl = ({ onGuess }) => {
                 value={currentGuess}
                 onChange={handleInputChange}
             />
-            <Button onClick={onSubmitGuess}>
-                Submit Guess
-            </Button>
+            <Button onClick={onSubmitGuess}>Submit Guess</Button>
         </div>
     );
 };
