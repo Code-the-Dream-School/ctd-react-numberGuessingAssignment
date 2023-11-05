@@ -17,6 +17,7 @@ const GuessControl = ({ onGuess, isGameOver }) => {
     return (
         <div>
             <input
+                name="inputNumber"
                 type="number"
                 value={currentGuess}
                 onChange={handleInputChange}
