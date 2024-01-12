@@ -1,3 +1,4 @@
+import React from "react";
 function getGuessMessage(guess, numberToGuess) {
   const distanceApart = Math.abs(numberToGuess - guess);
   if (guess < numberToGuess) {
