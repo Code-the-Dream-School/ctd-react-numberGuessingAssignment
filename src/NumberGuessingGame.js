@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import GuessControl from "./GuessControl";
 import GameOver from "./GameOver";
 
-
 const NumberGuessingGame = () => {
   const getRandomNumber = () => Math.floor(Math.random() * 100) + 1;
   const MAX_ATTEMPTS = 5;
@@ -10,7 +9,6 @@ const NumberGuessingGame = () => {
   const [numberToGuess, setNumberToGuess] = useState(getRandomNumber);
   const [numberOfGuesses, setNumberOfGuesses] = useState(0);
   const [latestGuess, setLatestGuess] = useState(null);
-
 
   const handleGuess = (guess) => {
     setLatestGuess(Number(guess));
@@ -22,7 +20,7 @@ const NumberGuessingGame = () => {
     setNumberOfGuesses(0);
     setLatestGuess(null);
   };
-
+  // place in this comment to enable a resubmit
   return (
     <div>
       <h1>Number Guessing Game</h1>
