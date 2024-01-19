@@ -3,32 +3,28 @@ import GuessControl from "./GuessControl";
 import GuessMessage from "./GuessMessage";
 import GameOver from "./GameOver";
 
+const MAX_ATTEMPTS = 5;
 
-function getRandomNumber() {
-  
-  return Math.floor(Math.random() * 100) + 1;
-}
-
-const MAX_ATTEMPTS = 10;
-
-
-function NumberGuessingGame() {
+const  NumberGuessingGame = () => {
+  const getRandomNumber = () =>  {
+    return Math.floor(Math.random() * 100) + 1;
+  };
+  const [numberToGuess, setNumberToGuess] = useState(getRandomNumber());
+  const [numberOfGuesses, setNumberOfGuesses] = useState(0);
+  const [latestGuess, setLatestGuess] = useState(null);
 
   const handleGuess = (guess) => {
-    setLatestGuess(Number(guess));
-    setNumberOfGuesses(Number(numberOfGuesses + 1));
+    setLatestGuess(guess);
+    setNumberOfGuesses(prevNumberOfGuesses => prevNumberOfGuesses + 1);
   };
 
   const handleReset = () => {
-    setNumberToGuess([getRandomNumber()]);
-    setNumberOfGuesses([0]);
-    setLatestGuess([null]);
+    setNumberToGuess(getRandomNumber());
+    setNumberOfGuesses(0);
+    setLatestGuess(null);
+    console.log("in the handlereset")
   }
-
-  const [numberToGuess, setNumberToGuess] = useState([getRandomNumber()]);
-  const [numberOfGuesses, setNumberOfGuesses] = useState([0]);
-  const [latestGuess, setLatestGuess] = useState([null]);
-  console.log(numberToGuess)
+console.log(numberToGuess)
   const isCorrectGuess = latestGuess === numberToGuess;
   const isGameOver =
     isCorrectGuess || numberOfGuesses === MAX_ATTEMPTS;

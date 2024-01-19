@@ -1,6 +1,6 @@
 import Button from "./Button";
 
-function GameOver({ hasWon, onReset }) {
+const GameOver = ({ hasWon, onReset }) => {
   return (
     <div>
       {hasWon && <h2>Congratulation! You guessed my number.</h2>}
