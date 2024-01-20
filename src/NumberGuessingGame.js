@@ -1,4 +1,3 @@
-import React, { Component } from "react";
 import GuessControl from "./GuessControl";
 import GuessMessage from "./GuessMessage";
 import GameOver from "./GameOver";
@@ -20,8 +19,9 @@ const NumberGuessingGame = () => {
   const [numberOfGuesses, setNumberOfGuesses] = useState(0);
   const [latestGuess, setLatestGuess] = useState(null);
 
-  const handleGuess = () => {
-    setLatestGuess(Number(numberOfGuesses + 1))
+  const handleGuess = (guess) => {
+    setNumberOfGuesses(Number(numberOfGuesses + 1))
+    setLatestGuess(guess)
   }
 
   const handleReset = () => {
