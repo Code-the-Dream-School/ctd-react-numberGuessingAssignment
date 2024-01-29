@@ -6,11 +6,9 @@ import GameOver from "./GameOver";
 
 function NumberGuessingGame() {
 
-  const [ numberData, setNumberData ] = useState({
-      numberToGuess: getRandomNumber(),
-      numberOfGuesses: 0,
-      latestGuess: null,
-  })
+  const [ numberToGuess, setNumberToGuess ] = useState(getRandomNumber())
+  const [ numberOfGuesses, setNumberOfGuesses ] = useState(0)
+  const [ latestGuess, setLatestGuess ] = useState(null)
 
   function getRandomNumber() {
     return Math.floor(Math.random() * 100) + 1;
@@ -19,23 +17,21 @@ function NumberGuessingGame() {
   const MAX_ATTEMPTS = 5;
 
   const handleGuess = (guess) => {
-    setNumberData({
-      latestGuess: guess,
-      numberOfGuesses: numberData.numberOfGuesses + 1,
-    });
+    setLatestGuess(guess)
+    setNumberOfGuesses(numberOfGuesses + 1)
   }
 
   const handleReset = () => {
-    setNumberData({
-      numberToGuess: getRandomNumber(),
-      numberOfGuesses: 0,
-      latestGuess: null,
-    });
+    setNumberToGuess(getRandomNumber())
+    setNumberOfGuesses(0)
+    setLatestGuess(null)
   }
 
-  const isCorrectGuess = numberData.latestGuess === numberData.numberToGuess;
+  const isCorrectGuess = latestGuess === numberToGuess;
 
-  const isGameOver = isCorrectGuess || numberData.numberOfGuesses === MAX_ATTEMPTS;
+  const isGameOver = isCorrectGuess || numberOfGuesses === MAX_ATTEMPTS;
+
+  console.log(numberOfGuesses)
 
   return (
     <>
@@ -50,9 +46,9 @@ function NumberGuessingGame() {
         )}
         {!isGameOver && (
           <GuessMessage
-            guess={numberData.latestGuess}
-            numberToGuess={numberData.numberToGuess}
-            numberOfGuesses={numberData.numberOfGuesses}
+            guess={latestGuess}
+            numberToGuess={numberToGuess}
+            numberOfGuesses={numberOfGuesses}
           />
         )}
       </div>

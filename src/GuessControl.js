@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Button from "./Button";
 
 
-function GuessControl() {
+function GuessControl( {onGuess} ) {
   
   const [ currentGuess, setCurrentGuess ] = useState('')
   
@@ -11,6 +11,7 @@ function GuessControl() {
   }
 
   const onSubmitGuess = () => {
+    onGuess()
     setCurrentGuess('')
   }
 
